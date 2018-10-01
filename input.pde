@@ -5,13 +5,12 @@ boolean moveDown;
 boolean shootFired;
 
 void keyPressed(){
-	//println("test");
 	if(key == 'w') moveUp = true;
 	if(key == 's') moveDown = true;
 	if(key == 'a') moveLeft = true;
 	if(key == 'd') moveRight = true;
 	if(keyCode == 32) shootFired = true;
-}
+ }
 
 void keyReleased(){
 	if(key == 'w') moveUp = false;
