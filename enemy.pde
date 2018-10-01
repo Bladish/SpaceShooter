@@ -6,4 +6,11 @@ super(x, y, vC)
 
 
 
+void draw(){
+
+
+super.draw();
+
+
+}
 }

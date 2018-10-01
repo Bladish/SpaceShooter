@@ -6,4 +6,6 @@ public abstract class CharacterBase{
 		position = new PVector(x,y);
 		velocity = vC;
 	}
+
+
 }
