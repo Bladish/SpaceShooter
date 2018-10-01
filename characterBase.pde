@@ -1,9 +1,7 @@
 public abstract class CharacterBase{
 	PVector position;
-	float velocity;
 
-	CharacterBase(float x, float y, float vC){
+	CharacterBase(float x, float y){
 		position = new PVector(x,y);
-		velocity = vC;
 	}
 }
