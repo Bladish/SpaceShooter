@@ -4,4 +4,6 @@ public abstract class CharacterBase{
 	CharacterBase(float x, float y){
 		position = new PVector(x,y);
 	}
+
+
 }
