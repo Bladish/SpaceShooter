@@ -69,19 +69,23 @@ boolean moveLeft;
 boolean moveRight;
 boolean moveUp;
 boolean moveDown;
+boolean shootFired;
 
 public void keyPressed(){
+	//println("test");
 	if(key == 'w') moveUp = true;
 	if(key == 's') moveDown = true;
 	if(key == 'a') moveLeft = true;
 	if(key == 'd') moveRight = true;
+	if(keyCode == 32) shootFired = true;
 }
 
 public void keyReleased(){
 	if(key == 'w') moveUp = false;
 	if(key == 's') moveDown = false;
 	if(key == 'a') moveLeft = false;
-	if(key == 'd') moveRight = false;	
+	if(key == 'd') moveRight = false;
+	if(keyCode == 32) shootFired = false;	
 }
 public class Player extends CharacterBase {
  	PVector movement;
@@ -96,7 +100,7 @@ public class Player extends CharacterBase {
 		fill(255,0,0);
 		ellipse(position.x, position.y, 30, 30);
 	}
-
+	
 	public void update(){
 	movement.x = getAxisRaw("Horizontal");
 	movement.y = getAxisRaw("Vertical");

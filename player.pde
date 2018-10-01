@@ -11,7 +11,7 @@ public class Player extends CharacterBase {
 		fill(255,0,0);
 		ellipse(position.x, position.y, 30, 30);
 	}
-
+	
 	void update(){
 	movement.x = getAxisRaw("Horizontal");
 	movement.y = getAxisRaw("Vertical");
