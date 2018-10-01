@@ -14,38 +14,82 @@ import java.io.IOException;
 
 public class SpaceShooter extends PApplet {
 
-Player player;
+Controller controller;
 
 
 public void setup() {
 	
+	controller = new Controller();
 	ellipseMode(CENTER);
-	player = new Player(100,100);
 }
 
 public void draw() {
 	background(255);
-	player.playerMovement();
-	player.draw();
+	controller.update();
 }
 
+public class Controller{
+	Player player;
+
+	public Controller () {
+		player = new Player(100,100);
+	}
+
+	public void update(){
+		player.update();
+		player.draw();
+	}
+}
 public abstract class CharacterBase{
 	PVector position;
 
 	CharacterBase(float x, float y){
 		position = new PVector(x,y);
 	}
+
+
+}
+public class enemy extends CharacterBase {
+
+public enemy(float x, float y){
+super(x, y);
 }
 
+
+
+public void draw(){
+
+
+//super.draw();
+
+
+}
+}
+boolean moveLeft;
+boolean moveRight;
+boolean moveUp;
+boolean moveDown;
+
+public void keyPressed(){
+	if(key == 'w') moveUp = true;
+	if(key == 's') moveDown = true;
+	if(key == 'a') moveLeft = true;
+	if(key == 'd') moveRight = true;
+}
+
+public void keyReleased(){
+	if(key == 'w') moveUp = false;
+	if(key == 's') moveDown = false;
+	if(key == 'a') moveLeft = false;
+	if(key == 'd') moveRight = false;	
+}
 public class Player extends CharacterBase {
-   	boolean moveLeft;
-   	boolean moveRight;
-   	boolean moveUp;
-   	boolean moveDown;
+ 	PVector movement;
    	float speed = 5;
 
 	public Player (float x, float y) {
 		super(x,y);
+		movement = new PVector(0,0);
 	}
 
 	public void draw(){
@@ -53,25 +97,12 @@ public class Player extends CharacterBase {
 		ellipse(position.x, position.y, 30, 30);
 	}
 
-	public void playerMovement(){
-	float xMovement = getAxisRaw("Horizontal") * speed;
-	float yMovement = getAxisRaw("Vertical") * speed;
-	position.x += xMovement;
-	position.y +=yMovement;
-	}
-
-	public void keyPressed(){
-		if(key == 'w') moveUp = true;
-		if(key == 's') moveDown = true;
-		if(key == 'a') moveLeft = true;
-		if(key == 'd') moveRight = true;
-	}
-
-	public void keyReleased(){
-		if(key == 'w') moveUp = false;
-		if(key == 's') moveDown = false;
-		if(key == 'a') moveLeft = false;
-		if(key == 'd') moveRight = false;	
+	public void update(){
+	movement.x = getAxisRaw("Horizontal");
+	movement.y = getAxisRaw("Vertical");
+	movement.normalize();
+	position.x += movement.x * speed;
+	position.y += movement.y * speed;
 	}
 
 	public float getAxisRaw(String axis){
@@ -94,7 +125,9 @@ public class Player extends CharacterBase {
 		}
 		return 0;
 	}
-}																										
+}
+
+
   public void settings() { 	size(600, 800); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "SpaceShooter" };

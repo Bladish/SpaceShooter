@@ -1,15 +1,14 @@
-Player player;
+Controller controller;
 
 
 void setup() {
 	size(600, 800);
+	controller = new Controller();
 	ellipseMode(CENTER);
-	player = new Player(100,100);
 }
 
 void draw() {
 	background(255);
-	player.playerMovement();
-	player.draw();
+	controller.update();
 }
 
