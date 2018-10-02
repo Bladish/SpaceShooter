@@ -62,4 +62,3 @@ public class Player extends CharacterBase {
 		if(position.y > height) position.y = height - 10; 
 	}
 }
-

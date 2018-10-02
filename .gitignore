@@ -10,3 +10,5 @@ application.windows64
 *.autosave
 
 
+*.java
+*.class

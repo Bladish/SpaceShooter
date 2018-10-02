@@ -3,11 +3,11 @@ public class Controller{
 	Player player;
 
     ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
-  
+
 	  EnemySnakey snakey;
-	
+
     public Controller () {
-		player = new Player(100,100);
+		player = new Player(width / 2,height - 100);
 		snakey=new EnemySnakey(0,0);
 
 		for (int i = 0; i < enemyCount; i++) {
