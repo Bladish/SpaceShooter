@@ -2,25 +2,18 @@ Player player;
 
 public class Weapon extends CharacterBase {
 	float weaponSize = 5;
-	float weaponSpeed = -7;
+	PVector bullets;
+	
 	public Weapon (float x, float y) {
-		super(x,y);
+		bullets = new PVector(x,y);
 	}
  	
- 	void draw(){
- 		fill(255,255,255);
- 		ellipse(position.x, position.y, weaponSize, weaponSize);
+ 	void update(){
+ 		bullets.y += -7;
  	}
 
-
- 	void update(float x, float y){
- 		if(shootFired){
- 			position.x = position.x;
- 			position.y += weaponSpeed;
- 		}
- 		else {
-	 		position.x = x;
-	 		position.y = y;
-		}
+ 	void draw(){
+ 		fill(255,255,255);
+ 		ellipse(bullets.x, bullets.y, weaponSize, weaponSize);
  	}
 }
