@@ -2,9 +2,11 @@ public class Controller{
   int enemyCount=3;
 	Player player;
 
-  ArrayList<Enemy> enemy=new ArrayList<Enemy>();
-	EnemySnakey snakey;
-	public Controller () {
+    ArrayList<Enemy> enemy=new ArrayList<Enemy>(3);
+  
+	  EnemySnakey snakey;
+	
+    public Controller () {
 		player = new Player(100,100);
 
 enemy.add(new Enemy(0, 200));
@@ -21,10 +23,10 @@ enemy.add(new Enemy(0, 200));
 	player.update();
 	player.draw();
 
-for(int i=0; i<enemyCount; i++){
-    enemy.enemyMovement();
+//for(int i=0; i<enemyCount; i++){
+    Enemy.enemyMovement();
     enemy.draw();
-}
+//}
 
 		snakey.snakeyMovement();
 		snakey.draw();
