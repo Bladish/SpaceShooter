@@ -8,9 +8,9 @@ public class EnemySnakey extends CharacterBase {
   float sinB=random(15,40);
   float sinA=random(50, 80);
 
-public EnemySnakey(float x, float y){
+public EnemySnakey(float x, float y, float size){
 
-super(x, y);
+super(x, y, size);
 
 }
 
@@ -35,7 +35,7 @@ super(x, y);
    for(int i=0; i<snakeyLength; i++){
 
   fill(120,120,120);
-  ellipse(position.x+(i*-1), position.y+(i*29), 20, 25);
+  ellipse(position.x+(i*-1), position.y+(i*29), size, 25);
    }
 
   }

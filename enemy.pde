@@ -11,8 +11,8 @@ public class Enemy extends CharacterBase {
 	//Kontrollerar höjd på vågorna
 	float sinA=random(50, 80);
 
-public Enemy(float x, float y){
-	super(x, y);
+public Enemy(float x, float y, float size){
+	super(x, y, size);
 }
 
 void movement(){
@@ -34,6 +34,6 @@ void movement(){
 
   void draw(){
 	fill(0,0,255);
-  	ellipse(position.x, position.y, 40, 40);
+  	ellipse(position.x, position.y, size, size);
 	}
 }

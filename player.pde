@@ -3,14 +3,14 @@ public class Player extends CharacterBase {
    	float speed = 5;
    	ArrayList<Weapon> bulletList = new ArrayList<Weapon>();
    	
-	public Player (float x, float y) {
-		super(x,y);
+	public Player (float x, float y, float size) {
+		super(x,y,size);
 		movement = new PVector(0,0);
 	}
 
 	void draw(){
 		fill(255,0,0);
-		ellipse(position.x, position.y, 30, 30);
+		ellipse(position.x, position.y, size, size);
 		for (Weapon bullet : bulletList) {
 			bullet.draw();
 		}
