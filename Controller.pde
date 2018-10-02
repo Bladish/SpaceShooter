@@ -2,15 +2,15 @@ public class Controller{
   int enemyCount=3;
 	Player player;
 
-  Enemy[] enemy;
+  ArrayList<Enemy> enemy=new ArrayList<Enemy>();
 	EnemySnakey snakey;
 	public Controller () {
 		player = new Player(100,100);
-    //enemy=new Enemy(0, 200);
 
-for(int i=0; i<enemyCount; i++){
-    enemy=new Enemy(0, 200);
-}
+enemy.add(new Enemy(0, 200));
+
+   // enemy=new Enemy(0, 200);
+
 		snakey=new EnemySnakey(0,0);
 
 	}
@@ -22,9 +22,9 @@ for(int i=0; i<enemyCount; i++){
 	player.draw();
 
 for(int i=0; i<enemyCount; i++){
-    enemy[i].enemyMovement();
-    enemy[i].draw();
-} 
+    enemy.enemyMovement();
+    enemy.draw();
+}
 
 		snakey.snakeyMovement();
 		snakey.draw();
