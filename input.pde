@@ -5,7 +5,6 @@ boolean moveDown;
 boolean shootFired;
 
 void keyPressed(){
-	//println("test");
 	if(key == 'w') moveUp = true;
 	if(key == 's') moveDown = true;
 	if(key == 'a') moveLeft = true;

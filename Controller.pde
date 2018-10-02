@@ -1,13 +1,18 @@
 public class Controller{
+  	int enemyCount = 3;
 	Player player;
 
-  Enemy enemy;
-		EnemySnakey snakey;
-		public Controller () {
+    ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
+  
+	  EnemySnakey snakey;
+	
+    public Controller () {
 		player = new Player(100,100);
-		enemy=new Enemy(0, 200);
 		snakey=new EnemySnakey(0,0);
 
+		for (int i = 0; i < enemyCount; i++) {
+			enemyList.add(new Enemy(random(0, width), 0));
+		}
 	}
 
 
@@ -15,12 +20,12 @@ public class Controller{
 	void update(){
 		player.update();
 		player.draw();
-		player.update();
-		player.draw();
 		player.fireWeapon();
-		enemy.enemyMovement();
-		enemy.draw();
 		snakey.snakeyMovement();
 		snakey.draw();
+		for (Enemy enemy : enemyList) {
+			enemy.movement();
+			enemy.draw();
+		}
 	}
 }

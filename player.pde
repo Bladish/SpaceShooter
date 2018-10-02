@@ -17,6 +17,7 @@ public class Player extends CharacterBase {
 	}
 
 	void update(){
+		checkBorders();
 		movement.x = getAxisRaw("Horizontal");
 		movement.y = getAxisRaw("Vertical");
 		movement.normalize();
@@ -49,9 +50,16 @@ public class Player extends CharacterBase {
 	}
 
 	void fireWeapon(){
-		if(shootFired){
+		if(shootFired){			
 			bulletList.add(new Weapon(position.x, position.y));
 		}
+	}
+
+	void checkBorders(){
+		if(position.x < 0) position.x = 10;
+		if(position.x > width) position.x = width - 10;
+		if(position.y < 0) position.y = 10;
+		if(position.y > height) position.y = height - 10; 
 	}
 }
 
