@@ -23,7 +23,7 @@ position.x=position.x+speed;
 position.y=(sinA * sin((position.x/4)/sinB)+284)+sinY;
 
 
-println(position.y);
+
 if(position.x>width){
 position.x=0;
 }

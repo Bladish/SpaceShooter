@@ -2,12 +2,13 @@ Player player;
 
 public class Weapon extends CharacterBase {
 	float weaponSize = 5;
+	
 	public Weapon (float x, float y) {
 		super(x,y);
 	}
  	
- 	void draw(){
+ 	void draw(float x, float y){
  		fill(255,255,255);
- 		ellipse(player.position.x, player.position.y, weaponSize, weaponSize);
+ 		ellipse(x, y, weaponSize, weaponSize);
  	}
 }

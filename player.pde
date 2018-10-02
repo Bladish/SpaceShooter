@@ -1,7 +1,11 @@
 public class Player extends CharacterBase {
  	PVector movement;
    	float speed = 5;
-
+   	Weapon weapon;
+   	float bulletX = position.x;
+   	float bulletY = position.y;
+   	float bulletSpeed = -7;
+	
 	public Player (float x, float y) {
 		super(x,y);
 		movement = new PVector(0,0);
@@ -18,6 +22,8 @@ public class Player extends CharacterBase {
 	movement.normalize();
 	position.x += movement.x * speed;
 	position.y += movement.y * speed;
+	bulletY += bulletSpeed;
+	weapon.draw(bulletX,bulletY);
 	}
 
 	float getAxisRaw(String axis){
@@ -39,5 +45,12 @@ public class Player extends CharacterBase {
 			}
 		}
 		return 0;
+	}
+
+	void fireWeapon(){
+		if(shootFired){
+			weapon = new Weapon(bulletX, bulletY);
+			println(bulletY);
+		}
 	}
 }
