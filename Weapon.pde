@@ -1,3 +1,5 @@
+Player player;
+
 public class Weapon extends CharacterBase {
 	float weaponSize = 5;
 	float weaponSpeed = -7;
@@ -21,4 +23,4 @@ public class Weapon extends CharacterBase {
 	 		position.y = y;
 		} 		
  	}
-}			
+}
