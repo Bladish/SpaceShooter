@@ -26,6 +26,6 @@ public class Controller{
 		for (Enemy enemy : enemyList) {
 			enemy.movement();
 			enemy.draw();
-		}<
+		}
 	}
 }
