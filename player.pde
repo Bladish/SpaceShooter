@@ -23,7 +23,7 @@ public class Player extends CharacterBase {
 	position.x += movement.x * speed;
 	position.y += movement.y * speed;
 	bulletY += bulletSpeed;
-	weapon.draw(bulletX,bulletY);
+//	weapon.draw(bulletX,bulletY);
 	}
 
 	float getAxisRaw(String axis){

@@ -1,5 +1,5 @@
 public class Enemy extends CharacterBase {
-  
+Enemy enemy;
   float speed=10;
 
 
@@ -23,8 +23,8 @@ position.x=position.x+speed;
 position.y=(sinA * sin((position.x/4)/sinB)+284)+sinY;
 
 
-
 if(position.x>width){
+
 position.x=0;
 }
 
