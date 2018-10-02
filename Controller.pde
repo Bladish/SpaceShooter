@@ -3,9 +3,9 @@ public class Controller{
 	Player player;
 
     ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
-  
+
 	  EnemySnakey snakey;
-	
+
     public Controller () {
 		player = new Player(100,100);
 		snakey=new EnemySnakey(0,0);
@@ -26,6 +26,6 @@ public class Controller{
 		for (Enemy enemy : enemyList) {
 			enemy.movement();
 			enemy.draw();
-		}
+		}<
 	}
 }
