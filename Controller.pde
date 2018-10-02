@@ -1,10 +1,11 @@
 public class Controller{
+
   	int enemyCount = 3;
 	Player player;
-
-    ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
-  
-	  EnemySnakey snakey;
+	ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
+  	int enemyCount=3;
+  	Player player;
+  	EnemySnakey snakey;
 	
     public Controller () {
 		player = new Player(100,100);
@@ -21,6 +22,9 @@ public class Controller{
 		player.update();
 		player.draw();
 		player.fireWeapon();
+		player.update();
+		player.draw();
+
 		snakey.snakeyMovement();
 		snakey.draw();
 		for (Enemy enemy : enemyList) {

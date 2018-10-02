@@ -1,4 +1,7 @@
 public class Enemy extends CharacterBase {
+Enemy enemy;
+  float speed=10;
+
 
 	float speed=10;
 
@@ -16,20 +19,18 @@ void movement(){
 
 //I WON, THIS WAVEY BULLSHIT LOST!
 	position.y=(sinA * sin((position.x/4)/sinB)+284)+sinY;
-
-
 	if(position.x>width){
 
 		position.x=0;
 	}
 
-	if(position.x<0){
-		position.x=width;
-	}
-}
+	if(position.x>width){
 
-  void draw(){
-	fill(0,0,255);
-  	ellipse(position.x, position.y, 40, 40);
+	position.x=0;
 	}
+
+	if(position.x<0){
+	 position.x=width;
+}
+}
 }
