@@ -1,5 +1,5 @@
 public class Enemy extends CharacterBase {
-  PVector movement;
+  
   float speed=10;
 
 
@@ -9,12 +9,7 @@ float sinA=random(50, 80);
 
 public Enemy(float x, float y){
 
-//float x=0;
-
-//float y= random(100, 500);
-
 super(x, y);
-
 
 }
 
@@ -47,15 +42,10 @@ if(position.y>height){
 */
 }
 
-void draw(){
+  void draw(){
 
   fill(0,0,255);
-ellipse(position.x, position.y, 40, 40);
-
-
-
-//super.draw();
-
+  ellipse(position.x, position.y, 40, 40);
 
 }
 
