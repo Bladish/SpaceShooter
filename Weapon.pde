@@ -13,7 +13,7 @@ public class Weapon extends CharacterBase {
  	}
 
  	void draw(){
- 		fill(255,255,255);
+ 		fill(17,247,115);
  		ellipse(bullets.x, bullets.y, weaponSize, weaponSize);
  	}
 }

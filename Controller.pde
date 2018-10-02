@@ -1,7 +1,7 @@
 public class Controller{
   	int enemyCount = 3;
 	Player player;
-
+  BackgroundEffects backgroundEffects;
     ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
 
 	  EnemySnakey snakey;
@@ -27,5 +27,7 @@ public class Controller{
 			enemy.movement();
 			enemy.draw();
 		}
+
+  //  backgroundEffects.draw();
 	}
 }

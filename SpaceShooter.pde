@@ -10,7 +10,7 @@ void setup() {
 }
 
 void draw() {
-	background(255);
+	background(1);
 	controller.update();
 
 
