@@ -11,7 +11,7 @@ public class Player extends CharacterBase {
 		fill(255,0,0);
 		ellipse(position.x, position.y, 30, 30);
 	}
-	
+
 	void update(){
 	movement.x = getAxisRaw("Horizontal");
 	movement.y = getAxisRaw("Vertical");
@@ -24,7 +24,7 @@ public class Player extends CharacterBase {
 		if(axis == "Horizontal"){
 			if(moveLeft){
 				return -1;
-			} 
+			}
 			if(moveRight){
 				return 1;
 			}
@@ -41,5 +41,3 @@ public class Player extends CharacterBase {
 		return 0;
 	}
 }
-
-

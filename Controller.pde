@@ -3,7 +3,7 @@ public class Controller{
   Enemy enemy;
 	public Controller () {
 		player = new Player(100,100);
-    enemy=new Enemy(200, 200);
+    enemy=new Enemy(0, 200);
 	}
 
 
