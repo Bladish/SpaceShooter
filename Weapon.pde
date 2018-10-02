@@ -19,7 +19,6 @@ public class Weapon extends CharacterBase {
  		else {
 	 		position.x = x;
 	 		position.y = y;
-	 	}
-	 		
+		} 		
  	}
 }			
