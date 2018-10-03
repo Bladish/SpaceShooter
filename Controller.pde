@@ -6,17 +6,17 @@ public class Controller{
     BackgroundEffects backgroundEffects;
     EnemySnakey snakey;
 
-    ArrayList<BackgroundEffects> starList=new ArrayList<BackgroundEffects>();
+    //ArrayList<BackgroundEffects> starList=new ArrayList<BackgroundEffects>();
     ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
 
     public Controller () {
-
+    backgroundEffects = new BackgroundEffects(20, 20, 20);
 		player = new Player(width / 2,height - 100, 30);
 		//snakey=new EnemySnakey(0, 0, 20);
 
-	    for (int v=0; v<starCount; v++){
+	   /* for (int v=0; v<starCount; v++){
 	      starList.add(new BackgroundEffects(40, 40, 40));
-	    }
+	    }*/
 		for (int i = 0; i < enemyCount; i++) {
 			enemyList.add(new Enemy(random(0, width), 0, 40));
 		}
@@ -32,10 +32,10 @@ public class Controller{
 		// snakey.snakeyMovement();
 		// snakey.draw();
 
-		for(BackgroundEffects stars : starList ){
-		    stars.backgroundUpdate();
-		    stars.draw();
-		}
+	//	for(BackgroundEffects stars : starList ){
+		    //stars.backgroundUpdate();
+		    //stars.draw();
+	//	}
 
 		for (Enemy enemy : enemyList) {
 				enemy.movement();

@@ -1,5 +1,8 @@
   public class BackgroundEffects extends CharacterBase{
 
+PImage galaxy =loadImage("galaxy.jpg");
+
+  //  PImage galaxy;
     float speed=8;
     float startPosX=random(1, width);
     float startPosY=random(-1, 5);
@@ -17,7 +20,7 @@ super(x, y, size);
   }
 
   void drawBackground(){
-  image(galaxy ,random(300),random(300),a.width/2, a.height/2);
+  image(galaxy ,100, 100, width-200, height-200);
   }
 
   }
