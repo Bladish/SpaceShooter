@@ -28,6 +28,7 @@ public class Controller{
 		player.update();
 		player.draw();
 		player.fireWeapon();
+		player.killedEnemy(enemyList);
 
 		// snakey.snakeyMovement();
 		// snakey.draw();

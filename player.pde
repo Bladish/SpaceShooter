@@ -62,4 +62,28 @@ public class Player extends CharacterBase {
 		if(position.y > height) position.y = height - 10;
 	}
 
+
+	ArrayList<Enemy> killedEnemy(ArrayList<Enemy> enemyList){
+		for(int i = 0; i < bulletList.size(); i++){
+			for(int j = 0; j < enemyList.size(); j++){
+			boolean hasCollided = checkCollision(	enemyList.get(j).position.x,
+													enemyList.get(j).position.y,
+													enemyList.get(j).size,
+
+													bulletList.get(i).bullets.x,
+													bulletList.get(i).bullets.y,
+													bulletList.get(i).weaponSize);
+				// Can add explosions here
+				if(hasCollided){
+					enemyList.remove(j);
+					bulletList.remove(i);
+					return enemyList;
+				}
+				if(bulletList.get(i).bullets.y < 0){
+					bulletList.remove(i);	
+				}
+				
+			}
+		}return enemyList;
+	}
 }
