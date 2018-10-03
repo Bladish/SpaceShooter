@@ -76,9 +76,9 @@ public class Enemy extends CharacterBase {
 			// Add gameover screen here
 			if(hasCollided){
 				println("GameOver");
-				enemyBulletList.remove(i);
+				
 			}
-			if(enemyBulletList.get(i).bullets.y > height){
+			if(enemyBulletList.get(i).bullets.y > height || hasCollided){
 				enemyBulletList.remove(i);	
 			}
 		}

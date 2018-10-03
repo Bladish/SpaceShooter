@@ -76,10 +76,9 @@ public class Player extends CharacterBase {
 				// Can add explosions here
 				if(hasCollided){
 					enemyList.remove(j);
-					bulletList.remove(i);
 					return enemyList;
 				}
-				if(bulletList.get(i).bullets.y < 0){
+				if(bulletList.get(i).bullets.y < 0 || hasCollided){
 					bulletList.remove(i);	
 				}
 				
