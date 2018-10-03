@@ -51,7 +51,7 @@ public class Player extends CharacterBase {
 
 	void fireWeapon(){
 		if(shootFired){
-			bulletList.add(new Weapon(position.x, position.y, 5));
+			bulletList.add(new Weapon(position.x, position.y, 5, 17, 247, 115));
 		}
 	}
 

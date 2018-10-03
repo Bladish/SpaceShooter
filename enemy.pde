@@ -1,7 +1,6 @@
 public class Enemy extends CharacterBase {
-
+	boolean playerDead = false;
 	ArrayList<Weapon> enemyBulletList = new ArrayList<Weapon>();
-
 	float speed=5;
 
 	int timeLastFired = 0;
@@ -58,32 +57,34 @@ public class Enemy extends CharacterBase {
 
 	void fireWeapon(){
 		if(canShoot()){
-			enemyBulletList.add(new Weapon(position.x, position.y, 10));
+			enemyBulletList.add(new Weapon(position.x, position.y, 10, 255,0,0));
 		}
 	}
 
 
 
-	void killedPlayer(float x, float y, float size){
+	boolean killedPlayer(float x, float y, float size, ArrayList<Enemy> enemyList){
 		for(int i = 0; i < enemyBulletList.size(); i++){
 			if(!enemyBulletList.isEmpty()){
-				boolean hasCollided = checkCollision(	x,
-														y,
-														size,
+	 		boolean hasCollided = checkCollision(	x,
+													y,
+													size,
 
-														enemyBulletList.get(i).bullets.x,
-														enemyBulletList.get(i).bullets.y,
-														enemyBulletList.get(i).weaponSize);
-			
-			// Add gameover screen here
+													enemyBulletList.get(i).bullets.x,
+													enemyBulletList.get(i).bullets.y,
+													enemyBulletList.get(i).weaponSize);
+				
 				if(hasCollided){
 					println("GameOver");
-					
+					println(hasCollided);
+					return playerDead = hasCollided;
 				}
-				if(enemyBulletList.get(i).bullets.y > height || hasCollided){
+
+				if(enemyBulletList.get(i).bullets.y > height){
 					enemyBulletList.remove(i);	
 				}
+					
 			}	
-		}
+		} return !playerDead;
 	}
 }
