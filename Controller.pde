@@ -12,7 +12,7 @@ public class Controller{
     public Controller () {
 
 		player = new Player(width / 2,height - 100, 30);
-		snakey=new EnemySnakey(0, 0, 20);
+		//snakey=new EnemySnakey(0, 0, 20);
 
 	    for (int v=0; v<starCount; v++){
 	      starList.add(new BackgroundEffects(40, 40, 40));
@@ -40,6 +40,9 @@ public class Controller{
 		for (Enemy enemy : enemyList) {
 				enemy.movement();
 				enemy.draw();
+				enemy.killedPlayer(player.position.x, player.position.y, player.size);
 		}
 	}
 }
+
+
