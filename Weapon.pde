@@ -1,5 +1,3 @@
-Player player;
-
 public class Weapon extends CharacterBase {
 	float weaponSize;
 	PVector bullets;
