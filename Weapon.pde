@@ -1,4 +1,5 @@
 public class Weapon extends CharacterBase {
+<<<<<<< HEAD
     float weaponSize;
     PVector bullets;
 
