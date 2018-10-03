@@ -23,7 +23,7 @@ public class Controller{
 
 
 	void update(){
-    //backgroundEffects.backgroundUpdate();
+  
     backgroundEffects.drawBackground();
 		player.update();
 		player.draw();

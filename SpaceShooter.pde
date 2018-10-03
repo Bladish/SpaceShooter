@@ -6,7 +6,7 @@ void setup() {
 	controller = new Controller();
 	ellipseMode(CENTER);
 
-	PImage galaxy =loadImage("galaxy.jpg");
+	//PImage galaxy =loadImage("galaxy.jpg");
 
 //frameRate(30);
 
@@ -16,11 +16,6 @@ backgroundEffects=new BackgroundEffects(20, 20 ,20);
 
 void draw() {
 	background(1);
-	//backgroundEffects.drawBackground();
 	controller.update();
-
-
-
-
 
 }
