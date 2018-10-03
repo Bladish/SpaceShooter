@@ -1,3 +1,3 @@
-public enum gameState(){
+// public enum gameState(){
 	
-}
+// }
