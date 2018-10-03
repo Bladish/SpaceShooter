@@ -1,5 +1,4 @@
 public class Enemy extends CharacterBase {
-	boolean playerDead = false;
 	ArrayList<Weapon> enemyBulletList = new ArrayList<Weapon>();
 	float speed=5;
 
@@ -75,9 +74,7 @@ public class Enemy extends CharacterBase {
 													enemyBulletList.get(i).weaponSize);
 				
 				if(hasCollided){
-					println("GameOver");
-					println(hasCollided);
-					return playerDead = hasCollided;
+					return !hasCollided;
 				}
 
 				if(enemyBulletList.get(i).bullets.y > height){
@@ -85,6 +82,6 @@ public class Enemy extends CharacterBase {
 				}
 					
 			}	
-		} return !playerDead;
+		} return true;
 	}
 }

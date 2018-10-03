@@ -28,13 +28,12 @@ public class Controller{
 			player.killedEnemy(enemyList);
 
 			for (Enemy enemy : enemyList) {
+				if (gameOn) {
 					enemy.movement();
 					enemy.draw();
 					gameOn = enemy.killedPlayer(player.position.x, player.position.y, player.size, enemyList);
-				
+				}
 			}
-			
-
 		}
 			else{drawGameOverScreen();}
 	}
