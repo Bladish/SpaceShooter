@@ -1,15 +1,17 @@
 Player player;
 
 public class Weapon extends CharacterBase {
-	float weaponSize = 5;
+	float weaponSize;
 	PVector bullets;
+
 	
-	public Weapon (float x, float y) {
+	public Weapon (float x, float y, float size) {
 		bullets = new PVector(x,y);
+		this.weaponSize = size;
 	}
  	
- 	void update(){
- 		bullets.y += -7;
+ 	void update(int bulletSpeed){
+ 		bullets.y += bulletSpeed;
  	}
 
  	void draw(){

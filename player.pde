@@ -24,7 +24,7 @@ public class Player extends CharacterBase {
 		position.x += movement.x * speed;
 		position.y += movement.y * speed;
 		for (Weapon bullet : bulletList) {
-			bullet.update();
+			bullet.update(-7);
 		}
 	}
 
@@ -51,7 +51,7 @@ public class Player extends CharacterBase {
 
 	void fireWeapon(){
 		if(shootFired){			
-			bulletList.add(new Weapon(position.x, position.y));
+			bulletList.add(new Weapon(position.x, position.y, 5));
 		}
 	}
 
@@ -61,4 +61,5 @@ public class Player extends CharacterBase {
 		if(position.y < 0) position.y = 10;
 		if(position.y > height) position.y = height - 10; 
 	}
+
 }
