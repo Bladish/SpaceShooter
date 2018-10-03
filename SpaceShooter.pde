@@ -6,6 +6,8 @@ void setup() {
 	controller = new Controller();
 	ellipseMode(CENTER);
 
+	PImage galaxy =l0adImage("galaxy.jpg");
+
 //frameRate(30);
 
 backgroundEffects=new BackgroundEffects(20, 20 ,20);

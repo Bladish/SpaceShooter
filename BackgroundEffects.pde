@@ -16,12 +16,8 @@ super(x, y, size);
     }
   }
 
-  void draw(){
-  strokeWeight(5);
-  stroke(253, 253, 253);
-  point(position.x, position.y);
-  stroke(0,0,0);
-  strokeWeight(1);
+  void drawBackground(){
+  image(galaxy ,random(300),random(300),a.width/2, a.height/2);
   }
 
   }
