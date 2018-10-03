@@ -66,21 +66,24 @@ public class Enemy extends CharacterBase {
 
 	void killedPlayer(float x, float y, float size){
 		for(int i = 0; i < enemyBulletList.size(); i++){
-			boolean hasCollided = checkCollision(	x,
-													y,
-													size,
+			if(!enemyBulletList.isEmpty()){
+				boolean hasCollided = checkCollision(	x,
+														y,
+														size,
 
-													enemyBulletList.get(i).bullets.x,
-													enemyBulletList.get(i).bullets.y,
-													enemyBulletList.get(i).weaponSize);
+														enemyBulletList.get(i).bullets.x,
+														enemyBulletList.get(i).bullets.y,
+														enemyBulletList.get(i).weaponSize);
+			
 			// Add gameover screen here
-			if(hasCollided){
-				println("GameOver");
-				
-			}
-			if(enemyBulletList.get(i).bullets.y > height || hasCollided){
-				enemyBulletList.remove(i);	
-			}
+				if(hasCollided){
+					println("GameOver");
+					
+				}
+				if(enemyBulletList.get(i).bullets.y > height || hasCollided){
+					enemyBulletList.remove(i);	
+				}
+			}	
 		}
 	}
 }

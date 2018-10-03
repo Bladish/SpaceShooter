@@ -63,26 +63,27 @@ public class Player extends CharacterBase {
 	}
 
 
-	ArrayList<Enemy> killedEnemy(ArrayList<Enemy> enemyList){
+	void killedEnemy(ArrayList<Enemy> enemyList){
 		for(int i = 0; i < bulletList.size(); i++){
 			for(int j = 0; j < enemyList.size(); j++){
-			boolean hasCollided = checkCollision(	enemyList.get(j).position.x,
-													enemyList.get(j).position.y,
-													enemyList.get(j).size,
+				if(!bulletList.isEmpty()){
+					boolean hasCollided = checkCollision(	enemyList.get(j).position.x,
+															enemyList.get(j).position.y,
+															enemyList.get(j).size,
 
-													bulletList.get(i).bullets.x,
-													bulletList.get(i).bullets.y,
-													bulletList.get(i).weaponSize);
-				// Can add explosions here
-				if(hasCollided){
-					enemyList.remove(j);
-					return enemyList;
-				}
-				if(bulletList.get(i).bullets.y < 0 || hasCollided){
-					bulletList.remove(i);	
-				}
-				
+															bulletList.get(i).bullets.x,
+															bulletList.get(i).bullets.y,
+															bulletList.get(i).weaponSize);
+						// Can add explosions here
+					if(hasCollided){
+						enemyList.remove(j);
+						
+					}
+					if(bulletList.get(i).bullets.y < 0 || hasCollided){
+						bulletList.remove(i);	
+					}
+				}		
 			}
-		}return enemyList;
+		}
 	}
 }
