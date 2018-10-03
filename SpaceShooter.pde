@@ -14,7 +14,7 @@ backgroundEffects=new BackgroundEffects(20, 20 ,20);
 
 void draw() {
 	background(1);
-  backgroundEffects.drawBackground();
+    //backgroundEffects.drawBackground();
 	controller.update();
 
 
