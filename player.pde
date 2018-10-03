@@ -2,7 +2,7 @@ public class Player extends CharacterBase {
  	PVector movement;
    	float speed = 5;
    	ArrayList<Weapon> bulletList = new ArrayList<Weapon>();
-   	
+
 	public Player (float x, float y, float size) {
 		super(x,y,size);
 		movement = new PVector(0,0);
@@ -24,7 +24,7 @@ public class Player extends CharacterBase {
 		position.x += movement.x * speed;
 		position.y += movement.y * speed;
 		for (Weapon bullet : bulletList) {
-			bullet.update();
+			bullet.update(-7);
 		}
 	}
 
@@ -50,8 +50,8 @@ public class Player extends CharacterBase {
 	}
 
 	void fireWeapon(){
-		if(shootFired){			
-			bulletList.add(new Weapon(position.x, position.y));
+		if(shootFired){
+			bulletList.add(new Weapon(position.x, position.y, 5));
 		}
 	}
 
@@ -59,6 +59,7 @@ public class Player extends CharacterBase {
 		if(position.x < 0) position.x = 10;
 		if(position.x > width) position.x = width - 10;
 		if(position.y < 0) position.y = 10;
-		if(position.y > height) position.y = height - 10; 
+		if(position.y > height) position.y = height - 10;
 	}
+
 }

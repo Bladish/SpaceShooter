@@ -1,19 +1,19 @@
-Player player;
-
 public class Weapon extends CharacterBase {
-	float weaponSize = 5;
-	PVector bullets;
-	
-	public Weapon (float x, float y) {
-		bullets = new PVector(x,y);
-	}
- 	
- 	void update(){
- 		bullets.y += -7;
- 	}
+    float weaponSize;
+    PVector bullets;
 
- 	void draw(){
- 		fill(17,247,115);
- 		ellipse(bullets.x, bullets.y, weaponSize, weaponSize);
- 	}
+
+    public Weapon (float x, float y, float size) {
+        bullets = new PVector(x,y);
+        this.weaponSize = size;
+    }
+
+     void update(int bulletSpeed){
+         bullets.y += bulletSpeed;
+     }
+
+     void draw(){
+         fill(17,247,115);
+         ellipse(bullets.x, bullets.y, weaponSize, weaponSize);
+     }
 }

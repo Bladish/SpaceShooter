@@ -2,7 +2,7 @@
 
     float speed=8;
     float startPosX=random(1, width);
-    float startPosY=random(-1, 12);
+    float startPosY=random(-1, 5);
 public BackgroundEffects(float x, float y, float size){
 super(x, y, size);
 }
@@ -14,7 +14,7 @@ super(x, y, size);
     if(position.y>height){
      position.y=1;
     }
-}
+  }
 
   void draw(){
   strokeWeight(5);

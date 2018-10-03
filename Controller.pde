@@ -33,8 +33,8 @@ public class Controller{
 		snakey.draw();
 
 for(BackgroundEffects stars : starList ){
-    stars.backgroundUpdate();
-    stars.draw();
+    backgroundEffects.backgroundUpdate();
+    backgroundEffects.draw();
 }
 
 
