@@ -1,0 +1,50 @@
+Space Shooter
+
+Gameplay
+Spelaren rör sig längs x och y axeln.
+Spelaren skjuter rakt fram.
+Fiender anfaller regelbundet och skjuter mot spelaren.
+Spelaren kan skjuta fiender.
+Fiender kan skjuta spelaren.
+
+Perspektiv
+Top down.
+Fiender kommer från toppen av skärmen samt dess höger och vänstersida.
+
+Features
+Game over skärm.
+Explosion när fiender och spelare dör dör.
+Dock inte när de kommer utanför skärmen och despawnar.
+Startskärm.
+Ljudeffekter.
+Sprites.
+Poängsystem.
+Varning för specifika fiender.
+Boss, spawnar när ett förbestämt antal fiender dött.
+Antalet fiender på skärmen ökar ju längre spelaren spelar.
+
+Kontroller
+W och S, spelarens rörelse i y-led.
+A och D, spelarens rörelse i x-led.
+Mellanslag, spelaren skjuter.
+
+Levels
+
+
+Object
+
+Fiender
+Variant ett: rör sig i x-led efter ett fast y-led och skjuter regelbundet nedåt eller uppåt beroende på spelarens position i y-led.
+Variant två: rör sig i y-led från toppen till botten av skärmen i en sin våg. Skjuter inte.
+Variant tre: rör sig i x-led i sin våg, skjuter regelbundet, skjuter i flera riktningar.
+Sökare: Kommer in på skärmen i x-led, stannar ett ögonblick, börjar sedan åka mot spelaren, skjuter inte.
+Boss, omöjlig att döda
+
+Fiende-regler:
+Spawnar alltid inom y0 och y 500.
+Despawnar när de kommer utanför skärmen.
+Skadar spelaren vid kontakt.
+Spawnar aldrig från botten av skärmen.
+
+
+Powerups
