@@ -1,10 +1,18 @@
+import processing.sound.*;
+
+SpaceShooter spaceShooter;
+
+PImage[] enemyUFO;
 public class Enemy extends CharacterBase {
 	ArrayList<Weapon> enemyBulletList = new ArrayList<Weapon>();
+
 	float speed=5;
+	int numFrames = 8;
+	int currentFrame = 0;
 
 	int timeLastFired = 0;
-
-//kontrollerar fiendens position i y-led
+  boolean spritesLoaded=false;
+  //kontrollerar fiendens position i y-led
 	float sinY=random(40, 300);
 
 	//kontrollerar avstånd mellan vågorna
@@ -17,7 +25,25 @@ public class Enemy extends CharacterBase {
 		super(x, y, size);
 	}
 
+  
+
 	void movement(){
+  
+  if(spritesLoaded==false){
+    enemyUFO = new PImage[numFrames];
+   
+		enemyUFO [0] = loadImage("UFO-02.png");
+		enemyUFO [1] = loadImage("UFO-02.png");
+		enemyUFO [2] = loadImage("UFO-03.png");
+		enemyUFO [3] = loadImage("UFO-03.png");
+
+		enemyUFO [4] = loadImage("UFO-02.png");
+		enemyUFO [5] = loadImage("UFO-02.png");
+		enemyUFO [6] = loadImage("UFO-03.png");
+		enemyUFO [7] = loadImage("UFO-03.png");
+    
+    spritesLoaded=true;
+  }
 		position.x = position.x+speed;
 		fireWeapon();
 
@@ -47,16 +73,24 @@ public class Enemy extends CharacterBase {
 		}
 
 	void draw(){
-		fill(0,0,255);
-	  	ellipse(position.x, position.y, size, size);
+		
+			currentFrame = (currentFrame+1) % numFrames;
+			int offset = 0;
+			for(int x=-100; x<width; x+=enemyUFO[0].width){
+       
+			image(enemyUFO[(currentFrame+offset) % numFrames], position.x, position.y);
+	    
+		}
+
 	  	for (Weapon enemyBullet : enemyBulletList) {
 			enemyBullet.draw();
+      
 		}
 	}
 
 	void fireWeapon(){
 		if(canShoot()){
-			enemyBulletList.add(new Weapon(position.x, position.y, 10, 255,0,0));
+			enemyBulletList.add(new Weapon(position.x, position.y, 8, 255,0,0));
 		}
 	}
 
@@ -72,16 +106,16 @@ public class Enemy extends CharacterBase {
 													enemyBulletList.get(i).bullets.x,
 													enemyBulletList.get(i).bullets.y,
 													enemyBulletList.get(i).weaponSize);
-				
+
 				if(hasCollided){
 					return !hasCollided;
 				}
 
 				if(enemyBulletList.get(i).bullets.y > height){
-					enemyBulletList.remove(i);	
+					enemyBulletList.remove(i);
 				}
-					
-			}	
+
+			}
 		} return true;
 	}
 }

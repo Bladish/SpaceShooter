@@ -1,6 +1,7 @@
+
 public class Controller{
   	int enemyCount = 6;
-	Player player;
+	  Player player;
     BackgroundEffects backgroundEffects;
     EnemySnakey snakey;
     boolean gameOn = true;
@@ -9,8 +10,9 @@ public class Controller{
     ArrayList<Enemy> enemyList = new ArrayList<Enemy>();
 
     public Controller () {
+      
     	backgroundEffects = new BackgroundEffects(20, 20, 20);
-		player = new Player(width / 2,height - 100, 30);
+		  player = new Player(width / 2,height - 100, 30);
 		//snakey=new EnemySnakey(0, 0, 20);
 
 
@@ -20,7 +22,9 @@ public class Controller{
 	}
 
 	void update(){
+  
 		if(gameOn){
+ 
 	  		backgroundEffects.drawBackground();
 			player.update();
 			player.draw();
